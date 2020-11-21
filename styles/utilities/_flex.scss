@@ -1,0 +1,106 @@
+@import "../functions";
+
+/********************************
+flex rows and columns directions
+********************************/
+$directions: (
+  "col": column,
+  "row": row,
+  "colr": column-reverse,
+  "rowr": row-reverse,
+);
+
+@include setClassesForBreakpoints(
+  $breakpoints,
+  $directions,
+  "f",
+  "flex-direction"
+);
+
+/********************
+flex wrap
+********************/
+$wraps: (
+  "wrap": wrap,
+  "nowrap": nowrap,
+  "wrap-reverse": wrap-reverse,
+);
+
+@include setClassesForBreakpoints($breakpoints, $wraps, "fw", "flex-wrap");
+
+/********************
+justify content
+********************/
+$justifies: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "sb": space-between,
+  "sa": space-around,
+  "se": space-evenly,
+);
+
+@include setClassesForBreakpoints(
+  $breakpoints,
+  $justifies,
+  "jc",
+  "justify-content"
+);
+
+/********************
+align items
+********************/
+$align-items: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "stretch": stretch,
+  "baseline": baseline,
+);
+
+@include setClassesForBreakpoints(
+  $breakpoints,
+  $align-items,
+  "ai",
+  "align-items"
+);
+
+/************************
+flex order
+************************/
+$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+@each $number in $numbers {
+  .order-#{$number} {
+    order: $number;
+  }
+}
+
+/************************
+flex grow
+************************/
+@each $number in $numbers {
+  .flex-#{$number} {
+    flex: $number;
+  }
+}
+
+/************************
+flex align-self
+************************/
+
+$align-self: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "stretch": stretch,
+  "baseline": baseline,
+  "auto": auto,
+);
+
+@include setClassesForBreakpoints(
+  $breakpoints,
+  $align-items,
+  "as",
+  "align-self"
+);

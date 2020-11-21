@@ -1,0 +1,78 @@
+@import "./variables";
+
+body {
+  font-family: "HK Grotesk", sans-serif;
+  color: $dark;
+  font-size: 1rem;
+  font-weight: $font-light;
+  background-color: $lighter;
+  display: flex;
+}
+
+th,
+caption {
+  font-weight: $font-bold;
+}
+
+tr {
+  border: solid $border-width-sm $border-default-color;
+  border-bottom: none;
+
+  &:last-child {
+    border-bottom: solid $border-width-sm $border-default-color;
+  }
+}
+
+td {
+  font-weight: $font-light;
+}
+
+th,
+td {
+  padding: $u2;
+  border-right: solid $border-width-sm $border-default-color;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+// ::selection {
+//   background: #f26c13;
+// }
+
+#__next {
+  flex: 1;
+  max-width: 100%;
+}
+
+#full-app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#content-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// je ne savais pas où mettre ça, mais c'est pratique ces trucs
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.pe-none {
+  pointer-events: none;
+}
+
+.pe-auto {
+  pointer-events: auto;
+}
