@@ -41,7 +41,7 @@ const Basics = ({ res }) => {
 Basics.getInitialProps = async () => {
   console.log("coucou");
   function sleep() {
-    return new Promise((resolve) => setTimeout(resolve, 5000));
+    return new Promise((resolve) => setTimeout(resolve, 1000));
   }
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
