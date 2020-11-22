@@ -1,136 +1,103 @@
-@import "../variables";
+@use "../variables" as v;
+@use "../functions" as f;
 
 /******************
 widths
 ******************/
-.w-0 {
-  width: 0;
-}
+@include f.set-classes("w", "width", v.$fixed-units, false, false, false);
+@include f.set-classes("w", "width", v.$relative-units, false, false, false);
+@include f.set-classes("w", "width", v.$view-units, false, false, false);
 
-.w-1 {
-  width: $u1;
-}
+@include f.set-classes(
+  "minw",
+  "min-width",
+  v.$fixed-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "minw",
+  "min-width",
+  v.$relative-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes("minw", "min-width", v.$view-units, false, false, false);
 
-.w-2 {
-  width: $u2;
-}
-
-.w-3 {
-  width: $u3;
-}
-
-.w-4 {
-  width: $u4;
-}
-
-.w-5 {
-  width: $u5;
-}
-
-.w-6 {
-  width: $u6;
-}
-
-.w-7 {
-  width: $u7;
-}
-
-.w-8 {
-  width: $u8;
-}
-
-.w-9 {
-  width: $u9;
-}
-
-.w-10 {
-  width: $u10;
-}
-
-.w-25 {
-  width: 25%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-75 {
-  width: 75%;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.w-auto {
-  width: auto;
-}
+@include f.set-classes(
+  "maxw",
+  "max-width",
+  v.$fixed-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "maxw",
+  "max-width",
+  v.$relative-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes("maxw", "max-width", v.$view-units, false, false, false);
 
 /******************
 heights
 ******************/
 
-.h-0 {
-  height: 0;
-}
+@include f.set-classes("h", "height", v.$fixed-units, false, false, false);
+@include f.set-classes("h", "height", v.$relative-units, false, false, false);
+@include f.set-classes("h", "height", v.$view-units, false, false, false);
 
-.h-1 {
-  height: $u1;
-}
+@include f.set-classes(
+  "minh",
+  "min-height",
+  v.$fixed-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "minh",
+  "min-height",
+  v.$relative-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "minh",
+  "min-height",
+  v.$view-units,
+  false,
+  false,
+  false
+);
 
-.h-2 {
-  height: $u2;
-}
-
-.h-3 {
-  height: $u3;
-}
-
-.h-4 {
-  height: $u4;
-}
-
-.h-5 {
-  height: $u5;
-}
-
-.h-6 {
-  height: $u6;
-}
-
-.h-7 {
-  height: $u7;
-}
-
-.h-8 {
-  height: $u8;
-}
-
-.h-9 {
-  height: $u9;
-}
-
-.h-10 {
-  height: $u10;
-}
-
-.h-25 {
-  height: 25%;
-}
-
-.h-50 {
-  height: 50%;
-}
-
-.h-75 {
-  height: 75%;
-}
-
-.h-100 {
-  height: 100%;
-}
-
-.h-auto {
-  height: auto;
-}
+@include f.set-classes(
+  "maxh",
+  "max-height",
+  v.$fixed-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "maxh",
+  "max-height",
+  v.$relative-units,
+  false,
+  false,
+  false
+);
+@include f.set-classes(
+  "maxh",
+  "max-height",
+  v.$view-units,
+  false,
+  false,
+  false
+);

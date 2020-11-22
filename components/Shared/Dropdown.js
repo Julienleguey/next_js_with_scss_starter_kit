@@ -7,7 +7,7 @@ const Dropdown = ({
   children,
   className,
   classNameTitle,
-  classNameChildren
+  classNameChildren,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -42,7 +42,7 @@ const Dropdown = ({
       </div>
       <div
         className={classnames(
-          `pe-auto pos-absolute pos-r-0 border z-1000 bg-white f-col py-2 px-3 shadow ${classNameChildren} ${
+          `pe-auto pos-absolute right-0 border z-1000 bg-white f-col py-2 px-3 shadow ${classNameChildren} ${
             open ? "d-flex" : "d-none"
           }`
         )}

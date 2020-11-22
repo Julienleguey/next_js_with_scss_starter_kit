@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables" as v;
 
 // todo :
 // text-left text-center text-right (with breakpoints)
@@ -9,7 +9,7 @@
 
 p,
 a {
-  color: $dark;
+  color: v.$dark;
 }
 
 .text-left {
@@ -25,23 +25,23 @@ a {
 }
 
 .font-weight-lighter {
-  font-weight: $font-lighter;
+  font-weight: v.$font-lighter;
 }
 
 .font-weight-light {
-  font-weight: $font-light;
+  font-weight: v.$font-light;
 }
 
 .font-weight-normal {
-  font-weight: $font-normal;
+  font-weight: v.$font-normal;
 }
 
 .font-weight-bold {
-  font-weight: $font-bold;
+  font-weight: v.$font-bold;
 }
 
 .font-weight-bolder {
-  font-weight: $font-bolder;
+  font-weight: v.$font-bolder;
 }
 
 .font-size-xs {

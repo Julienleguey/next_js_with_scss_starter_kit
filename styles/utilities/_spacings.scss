@@ -1,3 +1,4 @@
+@use "../variables" as v;
 @use "../functions" as f;
 
 $positions: (
@@ -15,5 +16,5 @@ $positions: (
   ),
 );
 
-@include f.set-classes("m", "margin", $fixed-units, $positions, true);
-@include f.set-classes("p", "padding", $fixed-units, $positions, true);
+@include f.set-classes("m", "margin", v.$fixed-units, $positions, true, false);
+@include f.set-classes("p", "padding", v.$fixed-units, $positions, true, false);

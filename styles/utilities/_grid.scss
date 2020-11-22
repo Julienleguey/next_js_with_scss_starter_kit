@@ -1,5 +1,5 @@
-@import "../functions";
-@import "../variables";
+@use "../variables" as v;
+@use "../functions" as f;
 
 /************************************
 template columns and rows

@@ -10,7 +10,7 @@ $directions: (
   "rowr": row-reverse,
 );
 
-@include f.set-classes("f", "flex-direction", $directions, false, true);
+@include f.set-classes("f", "flex-direction", $directions, false, true, false);
 
 /********************
 flex wrap
@@ -21,7 +21,7 @@ $wraps: (
   "wrap-reverse": wrap-reverse,
 );
 
-@include f.set-classes("fw", "flex-wrap", $wraps, false, true);
+@include f.set-classes("fw", "flex-wrap", $wraps, false, true, false);
 
 /********************
 justify content
@@ -35,7 +35,7 @@ $justifies: (
   "se": space-evenly,
 );
 
-@include f.set-classes("jc", "justify-content", $justifies, false, true);
+@include f.set-classes("jc", "justify-content", $justifies, false, true, false);
 
 /********************
 align items
@@ -48,25 +48,23 @@ $align-items: (
   "baseline": baseline,
 );
 
-@include f.set-classes("ai", "align-items", $align-items, false, true);
+@include f.set-classes("ai", "align-items", $align-items, false, true, false);
 
 /************************
 flex order
 ************************/
-$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-@each $number in $numbers {
-  .order-#{$number} {
-    order: $number;
+@for $i from 1 through 10 {
+  .order-#{$i} {
+    order: $i;
   }
 }
 
 /************************
 flex grow
 ************************/
-@each $number in $numbers {
-  .flex-#{$number} {
-    flex: $number;
+@for $i from 1 through 10 {
+  .flex-#{$i} {
+    flex: $i;
   }
 }
 
@@ -83,4 +81,4 @@ $align-self: (
   "auto": auto,
 );
 
-@include f.set-classes("as", "align-self", $align-items, false, true);
+@include f.set-classes("as", "align-self", $align-items, false, true, false);

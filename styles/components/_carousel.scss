@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables" as v;
 
 .carousel {
   display: flex;
@@ -9,18 +9,18 @@
 }
 
 .btn-carousel {
-  min-width: $u6;
+  min-width: v.$u6;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: $primary;
-  margin: 0 0 0 $u2;
+  background-color: v.$primary;
+  margin: 0 0 0 v.$u2;
   border-radius: 0 8px 8px 0;
   max-height: 160px;
 
   &.left {
-    margin: 0 $u2 0 0;
+    margin: 0 v.$u2 0 0;
     border-radius: 8px 0 0 8px;
   }
 }

@@ -1,19 +1,19 @@
-@import "../variables";
+@use "../variables" as v;
 
 .stripe-input {
   border-style: solid;
-  border-width: $border-width-sm;
-  border-color: $border-default-color;
+  border-width: v.$border-width-sm;
+  border-color: v.$border-default-color;
 
   &.complete {
-    border-color: $success;
+    border-color: v.$success;
   }
 
   &.focus {
-    border-color: $primary;
+    border-color: v.$primary;
   }
 
   &.invalid {
-    border-color: $danger;
+    border-color: v.$danger;
   }
 }

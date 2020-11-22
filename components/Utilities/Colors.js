@@ -10,7 +10,7 @@ const Colors = () => {
       <section className="pt-5 mb-4">
         <h3 className="mb-3">Default</h3>
         <p>The last one is transparent. Double-click on it to reveal it.</p>
-        <div className="d-flex">
+        <div className="d-flex fw-wrap">
           <p className="font-weight-bolder mb-2 p-2 mr-2 text-primary">
             primary
           </p>

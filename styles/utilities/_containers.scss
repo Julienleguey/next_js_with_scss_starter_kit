@@ -1,4 +1,4 @@
-@import "../variables";
+@use "../variables" as v;
 
 $breakpoints-list: (
   default: (
@@ -55,7 +55,7 @@ $container-max-widths: (
       @include container-default;
       @each $breakpoint-name in $breakpoint-list-value {
         @include media(
-          map-get($breakpoints, $breakpoint-name),
+          map-get(v.$breakpoints, $breakpoint-name),
           map-get($container-max-widths, $breakpoint-name)
         );
       }
@@ -65,7 +65,7 @@ $container-max-widths: (
       @include container-default;
       @each $breakpoint-name in $breakpoint-list-value {
         @include media(
-          map-get($breakpoints, $breakpoint-name),
+          map-get(v.$breakpoints, $breakpoint-name),
           map-get($container-max-widths, $breakpoint-name)
         );
       }

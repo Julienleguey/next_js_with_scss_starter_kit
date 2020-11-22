@@ -1,19 +1,17 @@
-@import "../variables";
+@use "../variables" as v;
 
-$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
-$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
-$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
-
-// todo à faire
 .shadow-sm {
-  box-shadow: $box-shadow-sm;
+  box-shadow: v.$box-shadow-sm;
 }
+
 .shadow {
-  box-shadow: $box-shadow;
+  box-shadow: v.$box-shadow;
 }
+
 .shadow-lg {
-  box-shadow: $box-shadow-lg;
+  box-shadow: v.$box-shadow-lg;
 }
+
 .shadow-none {
   box-shadow: none;
 }

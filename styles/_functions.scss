@@ -1,4 +1,5 @@
 @use "sass:list";
+@use "sass:string";
 @use "variables" as v;
 
 /*
@@ -15,18 +16,44 @@ pour toutes les classes qui se passent les unes par-dessus les autres (d-flex d-
 l'erreur serait de créer une classe et de lui donner sa propre media-query car des media-queries se retrouveraient avant d'autres alors qu'elles devraient être après
 */
 
-@mixin set-classes($prefix, $property, $values, $positions, $with-breakpoints) {
+// Ca commençait bien et c'est devenu le bazar. Il va falloir simplifier ça.
+// On pourrait avoir:
+// un mixin qui sert à créer le default sans position
+// un mixin pour les positions
+// et un mixin pour les breakpoints et les positions à la fois (c'est loop-on-breakpoints quoi, mais ça fait déjà une propriété en moins à passer)
+
+@mixin set-classes(
+  $prefix,
+  $property,
+  $values,
+  $positions,
+  $with-breakpoints,
+  $comp-prop
+) {
   // 1. creates the classes without the positions nor the breakpoints
-  @include loop-on-values($prefix, $property, $values, false);
+  @include loop-on-values($prefix, $property, $values, false, $comp-prop);
 
   // 2. creates the classes for the positions but not for the breakpoints
   @if $positions {
-    @include loop-on-positions($prefix, $property, $values, $positions, false);
+    @include loop-on-positions(
+      $prefix,
+      $property,
+      $values,
+      $positions,
+      false,
+      $comp-prop
+    );
   }
 
   // 3. creates the breakpoints
   @if $with-breakpoints {
-    @include loop-on-breakpoints($prefix, $property, $values, $positions);
+    @include loop-on-breakpoints(
+      $prefix,
+      $property,
+      $values,
+      $positions,
+      $comp-prop
+    );
   }
 }
 
@@ -35,10 +62,11 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
   $property,
   $values,
   $positions,
-  $breakpoint-short
+  $breakpoint-short,
+  $comp-prop
 ) {
   @each $position-short, $position-long in $positions {
-    $new-prefix: $prefix + $position-short; // ml
+    $new-prefix: set-new-prefix($prefix, $position-short); // ml
     $properties: set-properties-list(
       $property,
       $position-long
@@ -48,8 +76,18 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
       $new-prefix,
       $properties,
       $values,
-      $breakpoint-short
+      $breakpoint-short,
+      $comp-prop
     );
+  }
+}
+
+@function set-new-prefix($prefix, $position-short) {
+  @if string.length($position-short) == 1 {
+    @return $prefix + $position-short;
+  } @else {
+    @debug $position-short;
+    @return $prefix + "-" + $position-short;
   }
 }
 
@@ -61,11 +99,23 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
   @return $properties;
 }
 
-@mixin loop-on-breakpoints($prefix, $property, $values, $positions) {
+@mixin loop-on-breakpoints(
+  $prefix,
+  $property,
+  $values,
+  $positions,
+  $comp-prop
+) {
   @each $breakpoint-short, $breakpoint-value in v.$breakpoints {
     @media (min-width: $breakpoint-value) {
       // 3.a) creates the classes without the positions
-      @include loop-on-values($prefix, $property, $values, $breakpoint-short);
+      @include loop-on-values(
+        $prefix,
+        $property,
+        $values,
+        $breakpoint-short,
+        $comp-prop
+      );
 
       // 3.b) creates the classes for the positions
       @if $positions {
@@ -74,23 +124,41 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
           $property,
           $values,
           $positions,
-          $breakpoint-short
+          $breakpoint-short,
+          $comp-prop
         );
       }
     }
   }
 }
 
-@mixin loop-on-values($prefix, $properties, $values, $breakpoint-short) {
+@mixin loop-on-values(
+  $prefix,
+  $properties,
+  $values,
+  $breakpoint-short,
+  $comp-prop
+) {
   @each $value-short, $value-long in $values {
-    @if $breakpoint-short {
-      .#{$prefix}-#{$breakpoint-short}-#{$value-short} {
-        @include write-properties($properties, $value-long);
-      }
+    .#{set-class-name($prefix, $breakpoint-short, $value-short)} {
+      @include write-properties($properties, $value-long);
+      @include add-complementary-properties($comp-prop);
+    }
+  }
+}
+
+@function set-class-name($prefix, $breakpoint-short, $value-short) {
+  @if $breakpoint-short {
+    @if $value-short == "default" {
+      @return #{$prefix}-#{$breakpoint-short};
     } @else {
-      .#{$prefix}-#{$value-short} {
-        @include write-properties($properties, $value-long);
-      }
+      @return #{$prefix}-#{$breakpoint-short}-#{$value-short};
+    }
+  } @else {
+    @if $value-short == "default" {
+      @return #{$prefix};
+    } @else {
+      @return #{$prefix}-#{$value-short};
     }
   }
 }
@@ -98,5 +166,13 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
 @mixin write-properties($properties, $value-long) {
   @each $property in $properties {
     #{$property}: $value-long;
+  }
+}
+
+@mixin add-complementary-properties($comp-prop) {
+  @if $comp-prop {
+    @each $comp-prop-key, $comp-prop-value in $comp-prop {
+      #{$comp-prop-key}: $comp-prop-value;
+    }
   }
 }

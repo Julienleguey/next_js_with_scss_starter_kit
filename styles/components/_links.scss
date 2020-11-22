@@ -1,9 +1,9 @@
-@import "../variables";
+@use "../variables" as v;
 
 .link {
-  color: $dark;
+  color: v.$dark;
   text-decoration: none;
-  font-weight: $font-normal;
+  font-weight: v.$font-normal;
 
   &:hover {
     text-decoration: underline;

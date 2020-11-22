@@ -5,6 +5,7 @@ import Router from "next/router";
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
 import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
     <div id="full-app-container">
       <Header />
       <div id="content-container">
+        <Menu />
         <Component {...pageProps} />
       </div>
       <Footer />

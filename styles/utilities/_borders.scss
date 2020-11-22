@@ -1,73 +1,41 @@
-@import "../variables";
+@use "../variables" as v;
+@use "../functions" as f;
 
 /***************************
 borders add, remove, width
 ***************************/
+$border-sizes: (
+  "default": v.$border-width-sm solid v.$border-default-color,
+  "sm": v.$border-width-sm solid v.$border-default-color,
+  "md": v.$border-width-md solid v.$border-default-color,
+  "lg": v.$border-width-lg solid v.$border-default-color,
+  "0": 0,
+);
 
 $sides: (
-  all: "",
-  top: "top",
-  right: "right",
-  bottom: "bottom",
-  left: "left",
+  "top": "top",
+  "right": "right",
+  "bottom": "bottom",
+  "left": "left",
 );
 
-$border-sizes: (
-  default: $border-width-sm,
-  sm: $border-width-sm,
-  md: $border-width-md,
-  lg: $border-width-lg,
-  0: 0,
+$complementary-property: (
+  box-sizing: border-box,
 );
 
-@mixin border-class-creator(
-  $side-long-name,
-  $side-short-name,
-  $size-name,
-  $unit
-) {
-  @if $side-long-name == "all" {
-    @if $size-name == "default" {
-      .border {
-        border: solid $unit $border-default-color;
-        box-sizing: border-box;
-      }
-    } @else {
-      .border-#{$size-name} {
-        border: solid $unit $border-default-color;
-        box-sizing: border-box;
-      }
-    }
-  } @else {
-    @if $size-name == "default" {
-      .border-#{$side-short-name} {
-        border-#{$side-long-name}: solid $unit $border-default-color;
-        box-sizing: border-box;
-      }
-    } @else {
-      .border-#{$side-short-name}-#{$size-name} {
-        border-#{$side-long-name}: solid $unit $border-default-color;
-        box-sizing: border-box;
-      }
-    }
-  }
-}
-
-@each $side-long-name, $side-short-name in $sides {
-  @each $size-name, $unit in $border-sizes {
-    @include border-class-creator(
-      $side-long-name,
-      $side-short-name,
-      $size-name,
-      $unit
-    );
-  }
-}
+@include f.set-classes(
+  "border",
+  "border",
+  $border-sizes,
+  $sides,
+  false,
+  $complementary-property
+);
 
 /****************
 borders colors
 ****************/
-@each $color, $value in $colors {
+@each $color, $value in v.$colors {
   .border-#{$color} {
     border-color: $value;
   }
@@ -76,61 +44,45 @@ borders colors
 /***************
 borders radius
 ***************/
+$radius-sizes: (
+  "default": v.$border-radius-sm,
+  "sm": v.$border-radius-sm,
+  "md": v.$border-radius-md,
+  "lg": v.$border-radius-lg,
+  "0": 0,
+);
+
 $corners: (
-  all: "",
-  top-left: "tl",
-  top-right: "tr",
-  bottom-left: "bl",
-  bottom-right: "br",
+  "tl": "top-left",
+  "tr": "top-right",
+  "bl": "bottom-left",
+  "br": "bottom-right",
+  "t": (
+    "top-left",
+    "top-right",
+  ),
+  "r": (
+    "top-right",
+    "bottom-right",
+  ),
+  "b": (
+    "bottom-left",
+    "bottom-right",
+  ),
+  "l": (
+    "top-left",
+    "bottom-left",
+  ),
 );
 
-$rounded-sizes: (
-  default: $border-radius-sm,
-  sm: $border-radius-sm,
-  md: $border-radius-md,
-  lg: $border-radius-lg,
-  0: 0,
+@include f.set-classes(
+  "radius",
+  "border-radius",
+  $radius-sizes,
+  $corners,
+  false,
+  false
 );
-
-@mixin rounded-class-creator(
-  $corner-long-name,
-  $corner-short-name,
-  $size-name,
-  $unit
-) {
-  @if $corner-long-name == "all" {
-    @if $size-name == "default" {
-      .rounded {
-        border-radius: $unit;
-      }
-    } @else {
-      .rounded-#{$size-name} {
-        border-radius: $unit;
-      }
-    }
-  } @else {
-    @if $size-name == "default" {
-      .rounded-#{$corner-short-name} {
-        border-#{$corner-long-name}-radius: $unit;
-      }
-    } @else {
-      .rounded-#{$corner-short-name}-#{$size-name} {
-        border-#{$corner-long-name}-radius: $unit;
-      }
-    }
-  }
-}
-
-@each $corner-long-name, $corner-short-name in $corners {
-  @each $size-name, $unit in $rounded-sizes {
-    @include rounded-class-creator(
-      $corner-long-name,
-      $corner-short-name,
-      $size-name,
-      $unit
-    );
-  }
-}
 
 .circle {
   border-radius: 50%;

@@ -9,4 +9,4 @@ $displays: (
   "inline-block": inline-block,
 );
 
-@include f.set-classes("d", "display", $displays, false, true);
+@include f.set-classes("d", "display", $displays, false, true, false);

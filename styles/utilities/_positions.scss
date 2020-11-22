@@ -1,94 +1,27 @@
-// todo à compléter
-// des valeurs autre que 0 (1rem, par exemple, mais aussi des valeurs négatives)
+// TODO: negative values
+@use "../variables" as v;
+@use "../functions" as f;
 
-.pos-relative {
-  position: relative;
+$values: (
+  "relative": relative,
+  "absolute": absolute,
+  "static": static,
+  "sticky": sticky,
+  "float": float,
+);
+
+$sides: (top, right, bottom, left);
+
+@include f.set-classes("pos", "position", $values, false, false, false);
+
+@each $side in $sides {
+  @include f.set-classes($side, $side, v.$fixed-units, false, false, false);
+  @include f.set-classes($side, $side, v.$relative-units, $sides, false, false);
+  @include f.set-classes($side, $side, v.$view-units, $sides, false, false);
 }
 
-.pos-absolute {
-  position: absolute;
-}
-
-.pos-static {
-  position: static;
-}
-
-.pos-sticky {
-  position: sticky;
-}
-
-.pos-l-0 {
-  left: 0;
-}
-
-.pos-r-0 {
-  right: 0;
-}
-
-.pos-t-0 {
-  top: 0;
-}
-
-.pos-b-0 {
-  bottom: 0;
-}
-
-.pos-l-1 {
-  left: 1rem;
-}
-
-.pos-r-1 {
-  right: 1rem;
-}
-
-.pos-t-1 {
-  top: 1rem;
-}
-
-.pos-t-6 {
-  top: 3rem;
-}
-
-.pos-b-1 {
-  bottom: 1rem;
-}
-
-.pos-l-100 {
-  left: 100%;
-}
-
-.pos-r-100 {
-  right: 100%;
-}
-
-.pos-t-100 {
-  top: 100%;
-}
-
-.pos-b-100 {
-  bottom: 100%;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-.z-100 {
-  z-index: 100;
-}
-
-.z-500 {
-  z-index: 500;
-}
-
-.z-1000 {
-  z-index: 1000;
-}
-
-.z-5000 {
-  z-index: 5000;
-}
-
-.z-10000 {
-  z-index: 10000;
+@for $i from 1 through 1000 {
+  .z-#{$i} {
+    z-index: $i;
+  }
 }
