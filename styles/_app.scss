@@ -1,36 +1,36 @@
-@import "./variables";
+@use "variables" as v;
 
 body {
   font-family: "HK Grotesk", sans-serif;
-  color: $dark;
+  color: v.$dark;
   font-size: 1rem;
-  font-weight: $font-light;
-  background-color: $lighter;
+  font-weight: v.$font-light;
+  background-color: v.$lighter;
   display: flex;
 }
 
 th,
 caption {
-  font-weight: $font-bold;
+  font-weight: v.$font-bold;
 }
 
 tr {
-  border: solid $border-width-sm $border-default-color;
+  border: solid v.$border-width-sm v.$border-default-color;
   border-bottom: none;
 
   &:last-child {
-    border-bottom: solid $border-width-sm $border-default-color;
+    border-bottom: solid v.$border-width-sm v.$border-default-color;
   }
 }
 
 td {
-  font-weight: $font-light;
+  font-weight: v.$font-light;
 }
 
 th,
 td {
-  padding: $u2;
-  border-right: solid $border-width-sm $border-default-color;
+  padding: v.$u2;
+  border-right: solid v.$border-width-sm v.$border-default-color;
 
   &:last-child {
     border-right: none;

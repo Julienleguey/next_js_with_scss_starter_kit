@@ -1,5 +1,15 @@
-@import "app";
-@import "./utilities";
-@import "./components";
-@import "./effects";
-@import "fonts";
+// @import "./variables";
+// @import "./functions";
+// @import "./fonts";
+// @import "./app";
+// @import "./utilities";
+// @import "./components";
+// @import "./effects";
+
+@use "variables";
+@use "functions";
+@use "fonts";
+@use "app";
+@use "utilities";
+@use "components";
+@use "effects";

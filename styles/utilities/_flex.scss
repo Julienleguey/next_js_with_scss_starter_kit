@@ -1,4 +1,4 @@
-@import "../functions";
+@use "../functions" as f;
 
 /********************************
 flex rows and columns directions
@@ -10,12 +10,7 @@ $directions: (
   "rowr": row-reverse,
 );
 
-@include setClassesForBreakpoints(
-  $breakpoints,
-  $directions,
-  "f",
-  "flex-direction"
-);
+@include f.set-classes("f", "flex-direction", $directions, false, true);
 
 /********************
 flex wrap
@@ -26,7 +21,7 @@ $wraps: (
   "wrap-reverse": wrap-reverse,
 );
 
-@include setClassesForBreakpoints($breakpoints, $wraps, "fw", "flex-wrap");
+@include f.set-classes("fw", "flex-wrap", $wraps, false, true);
 
 /********************
 justify content
@@ -40,12 +35,7 @@ $justifies: (
   "se": space-evenly,
 );
 
-@include setClassesForBreakpoints(
-  $breakpoints,
-  $justifies,
-  "jc",
-  "justify-content"
-);
+@include f.set-classes("jc", "justify-content", $justifies, false, true);
 
 /********************
 align items
@@ -58,12 +48,7 @@ $align-items: (
   "baseline": baseline,
 );
 
-@include setClassesForBreakpoints(
-  $breakpoints,
-  $align-items,
-  "ai",
-  "align-items"
-);
+@include f.set-classes("ai", "align-items", $align-items, false, true);
 
 /************************
 flex order
@@ -98,9 +83,4 @@ $align-self: (
   "auto": auto,
 );
 
-@include setClassesForBreakpoints(
-  $breakpoints,
-  $align-items,
-  "as",
-  "align-self"
-);
+@include f.set-classes("as", "align-self", $align-items, false, true);

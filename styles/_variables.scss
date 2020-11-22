@@ -35,7 +35,6 @@ $colors: (
 BREAKPOINTS
 ******************/
 $breakpoints: (
-  default: 0,
   xs: 0,
   sm: 576px,
   md: 768px,
@@ -58,7 +57,7 @@ $u8: 5rem;
 $u9: 6rem;
 $u10: 7rem;
 
-$units: (
+$fixed-units: (
   0: $u0,
   1: $u1,
   2: $u2,
@@ -119,6 +118,6 @@ $border-width-sm: 1px;
 $border-width-md: 2px;
 $border-width-lg: 4px;
 
-$border-radius-sm: 0.25rem;
-$border-radius-md: 0.5rem;
-$border-radius-lg: 1rem;
+$border-radius-sm: $u1;
+$border-radius-md: $u2;
+$border-radius-lg: $u3;

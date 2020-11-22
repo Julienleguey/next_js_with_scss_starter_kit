@@ -1,4 +1,4 @@
-@import "../functions";
+@use "../functions" as f;
 
 $displays: (
   "none": none,
@@ -9,4 +9,4 @@ $displays: (
   "inline-block": inline-block,
 );
 
-@include setClassesForBreakpoints($breakpoints, $displays, "d", "display");
+@include f.set-classes("d", "display", $displays, false, true);
