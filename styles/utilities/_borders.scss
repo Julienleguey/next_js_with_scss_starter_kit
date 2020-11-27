@@ -53,31 +53,31 @@ $radius-sizes: (
 );
 
 $corners: (
-  "tl": "top-left",
-  "tr": "top-right",
-  "bl": "bottom-left",
-  "br": "bottom-right",
+  "tl": "top-left-radius",
+  "tr": "top-right-radius",
+  "bl": "bottom-left-radius",
+  "br": "bottom-right-radius",
   "t": (
-    "top-left",
-    "top-right",
+    "top-left-radius",
+    "top-right-radius",
   ),
   "r": (
-    "top-right",
-    "bottom-right",
+    "top-right-radius",
+    "bottom-right-radius",
   ),
   "b": (
-    "bottom-left",
-    "bottom-right",
+    "bottom-left-radius",
+    "bottom-right-radius",
   ),
   "l": (
-    "top-left",
-    "bottom-left",
+    "top-left-radius",
+    "bottom-left-radius",
   ),
 );
 
 @include f.set-classes(
   "radius",
-  "border-radius",
+  "border",
   $radius-sizes,
   $corners,
   false,

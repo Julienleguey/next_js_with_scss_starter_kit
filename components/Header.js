@@ -3,7 +3,7 @@ import Link from "./Shared/Link";
 
 const Header = () => {
   return (
-    <div className="border-bottom d-flex jc-sb px-4 w-100">
+    <div className="border-bottom d-flex jc-sb px-4 w-100" id="header">
       <Link href="/" className="text-center py-3">
         scss starter kit
       </Link>

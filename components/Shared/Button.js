@@ -24,7 +24,7 @@ const Button = ({
         link ? "btn-link" : "btn",
         size,
         fullWidth && "full-width",
-        `text-${color} bg-${color} border-${color}`,
+        `bg-${color} border-${color}`,
         outlined && "outlined",
         btnClassName
       )}

@@ -83,7 +83,7 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
 }
 
 @function set-new-prefix($prefix, $position-short) {
-  @if string.length($position-short) == 1 {
+  @if string.length($prefix) == 1 {
     @return $prefix + $position-short;
   } @else {
     @debug $position-short;

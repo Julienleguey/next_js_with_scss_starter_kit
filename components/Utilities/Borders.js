@@ -123,33 +123,33 @@ const Borders = () => {
         <h3 className="mb-3">Border Radius</h3>
 
         <div className="mb-5">
-          <h5 className="mb-3">Rounded Value</h5>
+          <h5 className="mb-3">Radius Values</h5>
           <p className="mb-1">
-            By default, rounded is rounded-sm. There are 4 values available:
-            -sm, -md, -lg, -0.
+            By default, radiues is radius-sm. There are 4 values available: -sm,
+            -md, -lg, -0.
           </p>
           <div className="d-flex fw-wrap">
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-sm" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-md" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-lg" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded rounded-0" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-sm" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-md" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-lg" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius radius-0" />
           </div>
           <div className="bg-light p-3 d-flex f-col">
             <code className="font-size-sm">
-              <div>&lt;div className="border rounded" /&gt;</div>
-              <div>&lt;div className="border rounded-sm" /&gt;</div>
-              <div>&lt;div className="border rounded-md" /&gt;</div>
-              <div>&lt;div className="border rounded-lg" /&gt;</div>
-              <div>&lt;div className="border rounded rounded-0" /&gt;</div>
+              <div>&lt;div className="border radius" /&gt;</div>
+              <div>&lt;div className="border radius-sm" /&gt;</div>
+              <div>&lt;div className="border radius-md" /&gt;</div>
+              <div>&lt;div className="border radius-lg" /&gt;</div>
+              <div>&lt;div className="border radius radius-0" /&gt;</div>
             </code>
           </div>
         </div>
 
         <div className="mb-5">
-          <h5 className="mb-3">Rounded Position</h5>
+          <h5 className="mb-3">Radius Position</h5>
           <div className="mb-1">
-            <p>You can chose to apply rounded to a specific corner:</p>
+            <p>You can chose to apply radius to a specific corner:</p>
             <ul>
               <li>top-left: -tl</li>
               <li>top-right: -tr</li>
@@ -158,43 +158,49 @@ const Borders = () => {
             </ul>
           </div>
           <div className="d-flex fw-wrap">
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-tl" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-tr" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-br" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-bl" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-tl" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-tr" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-br" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-bl" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-t" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-r" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-b" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-l" />
           </div>
           <div className="bg-light p-3 d-flex f-col">
             <code className="font-size-sm">
-              <div>&lt;div className="border rounded-tl" /&gt;</div>
-              <div>&lt;div className="border rounded-tr" /&gt;</div>
-              <div>&lt;div className="border rounded-br" /&gt;</div>
-              <div>&lt;div className="border rounded-bl" /&gt;</div>
+              <div>&lt;div className="border radius-tl" /&gt;</div>
+              <div>&lt;div className="border radius-tr" /&gt;</div>
+              <div>&lt;div className="border radius-br" /&gt;</div>
+              <div>&lt;div className="border radius-bl" /&gt;</div>
+              <div>&lt;div className="border radius-t" /&gt;</div>
+              <div>&lt;div className="border radius-r" /&gt;</div>
+              <div>&lt;div className="border radius-b" /&gt;</div>
+              <div>&lt;div className="border radius-l" /&gt;</div>
             </code>
           </div>
         </div>
 
         <div className="mb-5">
-          <h5 className="mb-3">Combine Rounded Position and Value</h5>
+          <h5 className="mb-3">Combine Radius Position and Value</h5>
           <p className="mb-1">
-            You can combine rounded position with rounded value.
+            You can combine radius position with radius value.
           </p>
           <div className="d-flex fw-wrap">
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-lg rounded-tl-0" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-lg rounded-bl-0 rounded-br-0" />
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border rounded-tl rounded-tr-md rounded-br-lg" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-lg radius-tl-0" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-lg radius-bl-0 radius-br-0" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-tl radius-tr-md radius-br-lg" />
           </div>
           <div className="bg-light p-3 d-flex f-col">
             <code className="font-size-sm">
+              <div>&lt;div className="border radius-lg radius-tl-0" /&gt;</div>
               <div>
-                &lt;div className="border rounded-lg rounded-tl-0" /&gt;
-              </div>
-              <div>
-                &lt;div className="border rounded-lg rounded-bl-0 rounded-br-0"
+                &lt;div className="border radius-lg radius-bl-0 radius-br-0"
                 /&gt;
               </div>
               <div>
-                &lt;div className="border rounded-tl rounded-tr-md
-                rounded-br-lg" /&gt;
+                &lt;div className="border radius-tl radius-tr-md radius-br-lg"
+                /&gt;
               </div>
             </code>
           </div>

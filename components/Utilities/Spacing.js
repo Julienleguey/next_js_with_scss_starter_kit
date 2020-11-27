@@ -1,3 +1,5 @@
+import Iframe from "../Shared/Iframe";
+
 const Spacing = () => {
   const sandbox = () => (
     <div className="d-flex f-col f-xl-row p-2 p-xl-5 border">
@@ -24,6 +26,7 @@ const Spacing = () => {
         <div className="mb-5">
           <h5 className="mb-3">Basic</h5>
           <div className="d-flex fw-wrap">{sandbox()}</div>
+          <iframe src="/sandboxes/border-1" />
         </div>
       </section>
     </div>

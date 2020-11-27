@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "./Shared/Link";
+import Button from "./Shared/Button";
 import classnames from "classnames";
 
 const Menu = () => {
@@ -34,10 +35,11 @@ const Menu = () => {
   };
 
   const [open, setOpen] = useState("");
+  const [hide, setHide] = useState(false);
 
   const displayBloc = (obj) => (
     <div className="mb-4">
-      <h5 className="mb-2" onClick={() => setOpen(obj.title)}>
+      <h5 className="mb-2 cursor-pointer" onClick={() => setOpen(obj.title)}>
         {obj.title}
       </h5>
       <div
@@ -61,9 +63,10 @@ const Menu = () => {
 
   return (
     <div
-      className="p-3 border-right"
+      className={classnames("p-3 border-right", hide && "d-none")}
       style={{ minWidth: "200px", maxWidth: "200px" }}
     >
+      <Button onClick={() => setHide(!hide)}>{hide ? "show" : "hide"}</Button>
       {displayBloc(basics)}
       {displayBloc(utilities)}
     </div>

@@ -1,6 +1,6 @@
 const Syntax = () => {
   const prefixes = [
-    ["border", "border / b"],
+    ["border", "border"],
     ["display", "d"],
     ["text", "text"],
     ["background", "bg"],
@@ -15,7 +15,7 @@ const Syntax = () => {
     ["align-self", "as"],
     ["position", "pos"],
     ["box-shadow", "shadow"],
-    ["", "rounded"],
+    ["border-radius", "radius"],
     ["z-index", "z"],
     ["width", "w"],
     ["min-width", "minw"],
@@ -72,6 +72,11 @@ const Syntax = () => {
       <section className="pt-5 mb-4">
         <h3 className="mb-3">Decomposition</h3>
         <p>prefix-position-breakpoint-value</p>
+
+        <p>
+          If the prefix is represented by only 1 letter, you should omit the "-"
+          between the prefix and the position. As in: mb-1, border-b-md.
+        </p>
       </section>
 
       <section className="pt-5 mb-4">
@@ -134,9 +139,10 @@ const Syntax = () => {
       <section className="pt-5 mb-4">
         <h3 className="mb-3">Value</h3>
         <p>
-          The value can be a unit (rem, vw, vh, percent), a color defined in the
-          variables (primary, success, danger, etc) and it can be a keyword
-          available in css (start, center, pointer, none, etc).
+          The value can be a unit (rem, vw, vh, percent), a predefined value
+          (sm, md, lg), a color defined in the variables (primary, success,
+          danger, etc) and it can be a keyword available in css (start, center,
+          pointer, none, etc).
         </p>
         <table>
           <tr>
