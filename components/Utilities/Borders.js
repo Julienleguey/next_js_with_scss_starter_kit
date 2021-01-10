@@ -105,16 +105,16 @@ const Borders = () => {
 
         <div className="d-flex fw-wrap">
           <div className="w-8 h-8 bg-light mr-3 mb-3 border" />
-          <div className="w-8 h-8 bg-light mr-3 mb-3 border border-sm" />
-          <div className="w-8 h-8 bg-light mr-3 mb-3 border border-md" />
-          <div className="w-8 h-8 bg-light mr-3 mb-3 border border-lg" />
+          <div className="w-8 h-8 bg-light mr-3 mb-3 border-sm" />
+          <div className="w-8 h-8 bg-light mr-3 mb-3 border-md" />
+          <div className="w-8 h-8 bg-light mr-3 mb-3 border-lg" />
         </div>
         <div className="bg-light p-3 d-flex f-col">
           <code className="font-size-sm">
             <div>&lt;div className="border" /&gt;</div>
-            <div>&lt;div className="border border-sm" /&gt;</div>
-            <div>&lt;div className="border border-md" /&gt;</div>
-            <div>&lt;div className="border border-lg" /&gt;</div>
+            <div>&lt;div className="border-sm" /&gt;</div>
+            <div>&lt;div className="border-md" /&gt;</div>
+            <div>&lt;div className="border-lg" /&gt;</div>
           </code>
         </div>
       </section>
@@ -129,7 +129,7 @@ const Borders = () => {
             -md, -lg, -0.
           </p>
           <div className="d-flex fw-wrap">
-            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius" />
+            <div className="w-8 h-8 bg-light mr-3 mb-3 border radius border-default" />
             <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-sm" />
             <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-md" />
             <div className="w-8 h-8 bg-light mr-3 mb-3 border radius-lg" />

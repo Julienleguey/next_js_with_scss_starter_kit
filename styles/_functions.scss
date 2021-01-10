@@ -86,7 +86,6 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
   @if string.length($prefix) == 1 {
     @return $prefix + $position-short;
   } @else {
-    @debug $position-short;
     @return $prefix + "-" + $position-short;
   }
 }
@@ -140,6 +139,15 @@ l'erreur serait de créer une classe et de lui donner sa propre media-query car 
   $comp-prop
 ) {
   @each $value-short, $value-long in $values {
+    @if string.slice(
+        set-class-name($prefix, $breakpoint-short, $value-short),
+        1,
+        6
+      ) ==
+      "radius"
+    {
+      @debug set-class-name($prefix, $breakpoint-short, $value-short);
+    }
     .#{set-class-name($prefix, $breakpoint-short, $value-short)} {
       @include write-properties($properties, $value-long);
       @include add-complementary-properties($comp-prop);

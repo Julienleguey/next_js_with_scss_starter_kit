@@ -53,36 +53,48 @@ $radius-sizes: (
 );
 
 $corners: (
-  "tl": "top-left-radius",
-  "tr": "top-right-radius",
-  "bl": "bottom-left-radius",
-  "br": "bottom-right-radius",
-  "t": (
-    "top-left-radius",
-    "top-right-radius",
+  "-tl": "border-top-left-radius",
+  "-tr": "border-top-right-radius",
+  "-bl": "border-bottom-left-radius",
+  "-br": "border-bottom-right-radius",
+  "-t": (
+    "border-top-left-radius",
+    "border-top-right-radius",
   ),
-  "r": (
-    "top-right-radius",
-    "bottom-right-radius",
+  "-r": (
+    "border-top-right-radius",
+    "border-bottom-right-radius",
   ),
-  "b": (
-    "bottom-left-radius",
-    "bottom-right-radius",
+  "-b": (
+    "border-bottom-left-radius",
+    "border-bottom-right-radius",
   ),
-  "l": (
-    "top-left-radius",
-    "bottom-left-radius",
+  "-l": (
+    "border-top-left-radius",
+    "border-bottom-left-radius",
   ),
 );
 
 @include f.set-classes(
   "radius",
-  "border",
+  "border-radius",
   $radius-sizes,
-  $corners,
+  false,
   false,
   false
 );
+
+@each $corner-prefix, $corner-property in $corners {
+  $prefix: "radius" + $corner-prefix;
+  @include f.set-classes(
+    $prefix,
+    $corner-property,
+    $radius-sizes,
+    false,
+    false,
+    false
+  );
+}
 
 .circle {
   border-radius: 50%;

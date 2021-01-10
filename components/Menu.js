@@ -63,6 +63,7 @@ const Menu = () => {
 
   return (
     <div
+      id="menu"
       className={classnames("p-3 border-right", hide && "d-none")}
       style={{ minWidth: "200px", maxWidth: "200px" }}
     >
