@@ -77,7 +77,16 @@ const Containers = () => {
       <section className="pt-5 mb-4">
         <h3 className="mb-3">Available Containers</h3>
 
-        <Iframe src="/sandboxes/container/ex-1" className="mb-3" />
+        {/*<Iframe src="/sandboxes/container/ex-1" className="mb-3" />*/}
+
+        <div>
+          <div className="container bg-primary h-10 mb-3">default</div>
+          <div className="container-sm bg-primary h-10 mb-3">sm</div>
+          <div className="container-md bg-primary h-10 mb-3">md</div>
+          <div className="container-lg bg-primary h-10 mb-3">lg</div>
+          <div className="container-xl bg-primary h-10 mb-3">xl</div>
+          <div className="container-tiny bg-primary h-10 mb-3">tiny</div>
+        </div>
 
         <div className="bg-light p-3 d-flex f-col">
           <code className="font-size-sm">

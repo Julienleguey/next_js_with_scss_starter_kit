@@ -36,9 +36,26 @@ const Display = () => {
           the first breakpoint, it will be a block between the first and the
           second breakpoint and it will be a flex after the second breakpoint.
         </p>
+        <div className="d-flex fw-wrap">
+          <div className="w-8 h-8 bg-light mr-3 mb-3 d-none d-sm-block d-md-flex" />
+        </div>
         <div className="bg-light p-3 d-flex f-col">
           <code className="font-size-sm">
             <div>&lt;div className="d-none d-sm-block d-md-flex"&gt;</div>
+          </code>
+        </div>
+
+        <p className="mt-3">
+          Another example: this div will be displayed as a flex on screens
+          smaller than the first breakpoint, and it won't be displayed on larger
+          screens.
+        </p>
+        <div className="d-flex fw-wrap">
+          <div className="w-8 h-8 bg-light mr-3 mb-3 d-flex d-sm-none" />
+        </div>
+        <div className="bg-light p-3 d-flex f-col">
+          <code className="font-size-sm">
+            <div>&lt;div className="d-flex d-sm-none"&gt;</div>
           </code>
         </div>
       </section>

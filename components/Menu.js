@@ -19,8 +19,8 @@ const Menu = () => {
   const utilities = {
     title: "utilities",
     links: [
+      "backgrounds",
       "borders",
-      "colors",
       "containers",
       "display",
       "flex",

@@ -48,6 +48,11 @@ p:first-letter {
   text-transform: capitalize;
 }
 
+p,
+a {
+  color: v.$dark;
+}
+
 // ::selection {
 //   background: #f26c13;
 // }

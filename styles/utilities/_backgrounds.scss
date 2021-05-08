@@ -1,14 +1,5 @@
 @use "../variables" as v;
 
-/****************
-text colors
-****************/
-@each $color, $value in v.$colors {
-  .text-#{$color} {
-    color: $value;
-  }
-}
-
 /******************
 background colors
 ******************/

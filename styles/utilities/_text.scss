@@ -7,9 +7,13 @@
 // text-wrapping and overflow
 // font-size: 1rem; font-size-sm: 14px; font-size-xs: 12px;
 
-p,
-a {
-  color: v.$dark;
+/****************
+text colors
+****************/
+@each $color, $value in v.$colors {
+  .text-#{$color} {
+    color: $value;
+  }
 }
 
 .text-left {

@@ -1,5 +1,6 @@
 @use "../variables" as v;
 @use "../functions" as f;
+@use "../helpers" as h;
 
 /***************************
 borders add, remove, width
@@ -12,13 +13,6 @@ $border-sizes: (
   "0": 0,
 );
 
-$sides: (
-  "top": "top",
-  "right": "right",
-  "bottom": "bottom",
-  "left": "left",
-);
-
 $complementary-property: (
   box-sizing: border-box,
 );
@@ -27,7 +21,7 @@ $complementary-property: (
   "border",
   "border",
   $border-sizes,
-  $sides,
+  h.$sides,
   false,
   $complementary-property
 );
@@ -52,29 +46,6 @@ $radius-sizes: (
   "0": 0,
 );
 
-$corners: (
-  "-tl": "border-top-left-radius",
-  "-tr": "border-top-right-radius",
-  "-bl": "border-bottom-left-radius",
-  "-br": "border-bottom-right-radius",
-  "-t": (
-    "border-top-left-radius",
-    "border-top-right-radius",
-  ),
-  "-r": (
-    "border-top-right-radius",
-    "border-bottom-right-radius",
-  ),
-  "-b": (
-    "border-bottom-left-radius",
-    "border-bottom-right-radius",
-  ),
-  "-l": (
-    "border-top-left-radius",
-    "border-bottom-left-radius",
-  ),
-);
-
 @include f.set-classes(
   "radius",
   "border-radius",
@@ -84,7 +55,7 @@ $corners: (
   false
 );
 
-@each $corner-prefix, $corner-property in $corners {
+@each $corner-prefix, $corner-property in h.$corners {
   $prefix: "radius" + $corner-prefix;
   @include f.set-classes(
     $prefix,

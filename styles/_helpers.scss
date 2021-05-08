@@ -1,0 +1,44 @@
+$sides: (
+  "top": "top",
+  "right": "right",
+  "bottom": "bottom",
+  "left": "left",
+);
+
+$corners: (
+  "-tl": "border-top-left-radius",
+  "-tr": "border-top-right-radius",
+  "-bl": "border-bottom-left-radius",
+  "-br": "border-bottom-right-radius",
+  "-t": (
+    "border-top-left-radius",
+    "border-top-right-radius",
+  ),
+  "-r": (
+    "border-top-right-radius",
+    "border-bottom-right-radius",
+  ),
+  "-b": (
+    "border-bottom-left-radius",
+    "border-bottom-right-radius",
+  ),
+  "-l": (
+    "border-top-left-radius",
+    "border-bottom-left-radius",
+  ),
+);
+
+$positions: (
+  "t": "top",
+  "r": "right",
+  "b": "bottom",
+  "l": "left",
+  "x": (
+    "right",
+    "left",
+  ),
+  "y": (
+    "top",
+    "bottom",
+  ),
+);
