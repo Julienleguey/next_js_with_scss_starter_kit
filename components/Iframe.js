@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Button from "./Shared/Button";
+import classnames from "classnames";
 
-const Iframe = ({ src }) => {
+const Iframe = ({ src, className }) => {
   const [width, setWidth] = useState("600");
 
   return (
-    <div className="d-flex f-col">
+    <div className={classnames(className, "d-flex f-col")}>
       <div className="d-flex h-5 ai-center" style={{ width: "200px" }}>
         <input
           type="range"
